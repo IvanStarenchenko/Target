@@ -49,9 +49,11 @@ export function GoalItem({ lesson, id }: IProps) {
 						✓
 					</span>{' '}
 				</button>
-				<button className='text-gray-400 hover:text-red-500 transition-colors p-1'>
-					🗑️
-				</button>
+				{!lesson.isCompleted && (
+					<button className='text-gray-400 hover:text-red-500 transition-colors p-1'>
+						🗑️
+					</button>
+				)}
 			</div>
 
 			<div className='flex items-center gap-5 ml-8 mt-2 text-sm'>

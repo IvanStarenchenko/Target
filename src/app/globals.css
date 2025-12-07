@@ -33,6 +33,12 @@ body {
 button {
 	cursor: pointer;
 	transition: all 0.3s ease;
+	color: var(--white);
+}
+ul,
+li,
+ol {
+	list-style: none;
 }
 .headerItem {
 	transition: all 0.3s ease;
@@ -48,6 +54,6 @@ button {
 	border-bottom: 2px solid var(--hover);
 }
 
-button {
-	color: var(--white);
+.button {
+	@apply mt-4 w-full bg-blue-500 text-white p-3 rounded-xl font-medium hover:bg-blue-600 transition;
 }

@@ -14,11 +14,11 @@ interface IProps {
 }
 
 export function SectionItem({ section, handleSaveInfo, openModal }: IProps) {
-	const { lesson } = useLessonStore()
+	const { lessons } = useLessonStore()
 	const { progress, percent, remainingHours } = useMathSection({
 		plannedHours: section.plannedHours,
-		completedHours: lesson
-			? lesson
+		completedHours: lessons
+			? lessons
 					.filter(l => l.sectionInfo?.id === section.id && l.isCompleted)
 					.reduce((acc, curr) => acc + curr.spentHours, 0)
 			: 0,
