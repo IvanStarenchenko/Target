@@ -1,20 +1,14 @@
+import { useFormateDate } from '@/hooks/useFormateDate'
 import type { ILesson } from '@/shared/types/sections'
 import { useLessonStore } from '@/store/lesson.store'
-export function formatLessonDate(date: Date | null | undefined): string {
-	if (!date) return ''
-
-	return new Intl.DateTimeFormat('ru-RU', {
-		day: 'numeric',
-		month: 'short',
-	}).format(date)
-}
 
 interface IProps {
 	lesson: ILesson
 	id: number
 }
-
 export function GoalItem({ lesson, id }: IProps) {
+	const { formatLessonDate } = useFormateDate()
+
 	const { updateLesson } = useLessonStore()
 
 	function handleCompleteLesson() {
